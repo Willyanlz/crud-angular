@@ -1,0 +1,27 @@
+<div class="container" id="formulario">
+    <h1>Deseja deletar o usuário:</h1>
+    <br>
+    <form #userForm="ngForm">
+        <div class="form-group">
+            <img class="img" src="{{usuario.avatar}}"> <br>
+            <label for="job">Nome:</label>&nbsp;
+            <label id="name" name="name" [(ngModel)]="usuario"><strong>{{usuario.first_name}} {{usuario.last_name}} </strong></label>
+            <br>
+            <label for="job">ID:</label>&nbsp;
+            <label id="job" name="job" [(ngModel)]="usuario"><strong>{{usuario.id}}</strong></label>
+        </div>
+
+        <div>
+            <a href="#" title="Cancelar" alt="Cancelar" class="btn btn-xs cancelar"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancelar</a>
+                &nbsp;
+            <button (click)="deleteUser()" [disabled]="!userForm.form.valid" type="submit" class="btn"><span class="glyphicon glyphicon-trash"></span> Deletar</button>   
+        </div>
+    </form>
+</div>
+
+<div class="container cadastrado" *ngIf="telaSucess" >
+    <h2>Usuario deletado</h2>
+    <img class="img" src="https://cdn.pixabay.com/photo/2015/06/09/16/12/icon-803718_1280.png">
+
+    <a href="#" title="OK" alt="OK" class="btn btn-xs ok cancelar" style="background-color:  rgb(52, 193, 71);"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> OK </a>
+</div>

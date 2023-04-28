@@ -1,0 +1,46 @@
+*{
+    color: black;
+}
+
+.table-responsive{
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px -15px black;
+    width: 90vw;
+}
+
+thead{
+    background-color: rgb(48, 48, 48);
+}
+
+th{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 26px;
+}
+
+td{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #a09d9d; /* Define a cor de fundo das linhas zebradas */
+}
+
+
+#editar:hover{
+    color: blue;
+    transition-duration: .5s;
+    transform: rotate(360deg);
+}
+
+#deletar:hover ,span:hover{
+    color: red;
+    transform: rotate(-360deg);
+    transition-duration: .5s;
+}
+
+.glyphicon{
+    font-size: 30px;
+}

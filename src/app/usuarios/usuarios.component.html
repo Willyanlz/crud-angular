@@ -1,0 +1,24 @@
+<h1>Usuários</h1>
+
+<div class="table-responsive show">
+    <table class="table table-striped" *ngIf="responseUsers">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th style="text-align: center;">Editar / Deletar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of responseUsers.data">
+                <td>{{ user.first_name }}</td>
+                <td>{{ user.last_name }}</td>
+                <td style="text-align: center;">
+                    <a routerLink="/users/update/{{user.id}}"><span class="glyphicon glyphicon-pencil" id="editar" aria-hidden="true"></span></a>
+                    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a routerLink="/users/delete/{{user.id}}"><span class="glyphicon glyphicon-trash" id="deletar" aria-hidden="true"></span></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

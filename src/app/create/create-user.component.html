@@ -1,0 +1,44 @@
+<div class="container" id="formulario">
+    <h1>Criar usuário</h1>
+    <form #userForm="ngForm">
+        <div class="form-group">
+            <label for="name">Nome:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Digite o nome" [(ngModel)]="usuario.name" #nome="ngModel" required autocomplete="false">
+            <div *ngIf="nome.errors && (nome.dirty || nome.touched)" class="alert alert-danger">
+                <div [hidden]="!nome.errors.required">
+                    Digite um nome.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="job">Profissão:</label>
+            <input type="text" class="form-control" id="job" name="job" placeholder="Digite a profissão" [(ngModel)]="usuario.job" #job="ngModel" required minlength="5">
+            <div *ngIf="job.errors && (job.dirty || job.touched)" class="alert alert-danger">
+                <div [hidden]="!job.errors.minlength">
+                    Digite uma profissão válida.
+                </div>
+                <div [hidden]="!job.errors.required">
+                    Digite uma profissão.
+                </div>
+            </div>
+        </div>
+        <div>
+            <a href="#" title="Cancelar" alt="Cancelar" class="btn btn-xs cancelar"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancelar </a>
+                &nbsp;
+            <button (click)="save()" [disabled]="!userForm.form.valid" type="submit" class="btn"><span class="glyphicon glyphicon-floppy-disk"></span> Confirmar</button>
+            
+        </div>
+    </form>
+</div>
+
+<div class="container cadastrado" id="form2" >
+    <h2>Usuario cadastrado</h2>
+    <img class="img" src="https://img.freepik.com/vetores-premium/perfil-de-avatar-de-homem-no-icone-redondo_24640-14046.jpg" *ngIf="erro" alt="">
+    <img class="img" *ngIf="!erro" src="{{photo.src.original}}"> 
+    <label>Nome: {{response.name}}</label>
+    <label>Profissão: {{response.job}}</label>
+    <label>Id: {{response.id}}</label>
+    <label>Criado em: {{response.createdAt | dataBr}}</label>
+
+    <a (click)="redefineCampos()" title="OK" alt="OK" class="btn btn-xs ok cancelar" style="background-color:  rgb(52, 193, 71);"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> OK </a>
+</div>
