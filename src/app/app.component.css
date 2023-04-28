@@ -1,0 +1,72 @@
+*{
+    color: black;
+}
+
+div{
+    background-color: grey;
+}
+
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0;
+}
+
+.navbar-header>a{
+    vertical-align: middle;  
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    color: black;
+}
+
+.navbar-header > a:visited{
+    color: black;
+}
+
+h2{
+    margin-top: -5px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.navbar-default{
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px -15px black;
+    background-color: transparent;
+    width: 99vw;
+
+}
+
+.btn{
+    border: 0;
+    font-size: 15px;
+    background-color: rgb(73, 73, 73);
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px -15px black;
+}
+
+.btn:hover, .btn::selection{
+    box-shadow: 5px 10px 3px -5px black;
+    background-color: rgb(73, 73, 73);
+    border: 0;
+}
+
+.btn:active, .btn:focus{
+    box-shadow: 5px 10px 3px -5px white;
+    background-color: rgb(40, 40, 40);
+    border: 0;
+}
+
+.opcoes{
+    margin: 30px 0px 30px 0px;
+}
+
+li{
+    margin-right: 15px;
+}
+
+.btn, span{
+    color: white;
+}
